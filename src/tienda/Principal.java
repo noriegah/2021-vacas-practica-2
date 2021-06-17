@@ -1,6 +1,7 @@
 package src.tienda;
 
 import src.clientes.VectorClientes;
+import src.peliculas.VectorPeliculas;
 
 public class Principal {
 
@@ -9,6 +10,7 @@ public class Principal {
     }
 
     private VectorClientes tablaClientes = new VectorClientes();
+    private VectorPeliculas tablaPeliculas = new VectorPeliculas();
 
     public Principal(){
 
@@ -52,10 +54,32 @@ public class Principal {
                 tablaClientes.ordenarPorNombre(false);
                 tablaClientes.mostrarClientes();
             }
-
+            if (menu == 5 ){
+                //ingreso de datos
+                tablaPeliculas.agregarPelicula();
+            }
+            if (menu == 6){
+                //mostrar peliculas
+                tablaPeliculas.mostrarPeliculas();
+            }
+            if (menu == 7){
+                //ordenar ascendente
+                System.out.println("Desordenado:");
+                tablaPeliculas.mostrarPeliculas();
+                System.out.println("\n\nOrdenado:");
+                tablaPeliculas.ordenarPorNombre(true);
+                tablaPeliculas.mostrarPeliculas();
+            }
+            if (menu == 8){
+                //mostrar descendente
+                System.out.println("Desordenado:");
+                tablaPeliculas.mostrarPeliculas();
+                System.out.println("\n\nOrdenado:");
+                tablaPeliculas.ordenarPorNombre(false);
+                tablaPeliculas.mostrarPeliculas();
+            }
         }
-
     }
+}
 
     
-}
